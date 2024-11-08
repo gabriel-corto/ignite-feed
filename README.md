@@ -16,9 +16,19 @@ developed during the training at https://www.rocketseat.com.br of the react fund
 </ul>
 
 ## 🚀 Como começar ?
-Pré-requisitos <br>
+
 Certifique-se de ter o seguinte instalado:
 
 1. Node.js 
 
 ## 📚 Funcionalidades
+
+<li>
+  1 - Create comments 
+</li>
+<li>
+  2 - Delete comments 
+</li>
+<li>
+  3 - Like comments 
+</li>

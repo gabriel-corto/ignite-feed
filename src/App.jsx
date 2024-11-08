@@ -6,6 +6,8 @@ import './global.css'
 import styles from "./App.module.css"
 
 export function App() {
+  
+  console.log("We are going to to add new features !")
   return (
     <div>
       <Header />

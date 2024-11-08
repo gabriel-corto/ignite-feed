@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar"
 import { Comment } from "./Comment"
 
 import avatarImage from "/assets/avatar.jfif"
@@ -8,10 +9,7 @@ export function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar} 
-            src={avatarImage} 
-            alt="avatar" />
+          <Avatar src={avatarImage} />
 
             <div className={styles.authorInfo}>
               <strong>Gabriel Francisco</strong>
@@ -19,7 +17,7 @@ export function Post() {
             </div>
         </div>
 
-        <time title="Publicado 11 de Maio" datetime="2024-05-11 08:13">Publicado à 1h</time>
+        <time title="Publicado 11 de Maio" dateTime="2024-05-11 08:13">Publicado à 1h</time>
       </header>
 
       <div className={styles.content}>

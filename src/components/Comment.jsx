@@ -9,7 +9,7 @@ export function Comment() {
       <img src={avatarImage} alt="avatar" />
       
       <div className={styles.commentBox}>
-        <div>
+        <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
               <strong>Gabriel Francisco</strong>

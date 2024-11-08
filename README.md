@@ -9,9 +9,11 @@ developed during the training at https://www.rocketseat.com.br of the react fund
 
 ## 🛠️ Tecnologias Usadas
 
-<li>
-  Front-end: React, Typescript, HTML, CSS
-</li>
+<ul>
+  <li>Vite</li>
+  <li>React.js</li>
+  <li>Typescript</li>
+</ul>
 
 ## 🚀 Como começar ?
 Pré-requisitos <br>

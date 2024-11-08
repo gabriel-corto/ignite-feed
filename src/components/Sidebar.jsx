@@ -1,3 +1,5 @@
+import { Avatar } from "./Avatar"
+
 import coverImage from "/assets/cover.jpg"
 import avatarImage from "/assets/avatar.jfif"
 
@@ -7,19 +9,16 @@ import { PencilLine } from "phosphor-react"
 export function Sidebar() {
   return(
     <aside className={styles.sidebar}>
-      <img 
+      <img
         className={styles.cover} 
         src={coverImage} 
+        alt="cover" 
       />
 
       <div className={styles.profile}>
 
         <div>
-          <img
-            className={styles.avatar}
-            src={avatarImage} 
-            alt="avatar" 
-          />
+          <Avatar src={avatarImage} />
         </div>
 
         <strong>Gabriel Francisco</strong>

@@ -1,3 +1,5 @@
+import { Comment } from "./Comment"
+
 import avatarImage from "/assets/avatar.jfif"
 import styles from "./Post.module.css"
 
@@ -40,6 +42,11 @@ export function Post() {
           </button>
         </footer>
       </form>
+
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+      </div>
     </article>
   )
 }

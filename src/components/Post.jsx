@@ -22,7 +22,7 @@ export function Post() {
 
       <div className={styles.content}>
         <p>Faala Galera 👏</p>
-        <p>Avabei de subir um novo projcto no meu portofólio. É um projecto que fiz no NLW return, evento da rocketseat</p>
+        <p>Olá, Acabei de subir um novo projecto no meu portofólio. É um projecto que fiz no NLW return, evento da rocketseat</p>
         <p>👍<a href="#">gabriel.francisco/app</a></p>
         <p><a href="#">#rocketseat #nlw, #novoprojecto</a></p>
       </div>

@@ -1,30 +1,46 @@
+import { format, formatDistanceToNow } from "date-fns"
+import ptBr from "date-fns/locale/pt-BR"
+
 import { Avatar } from "./Avatar"
 import { Comment } from "./Comment"
 
-import avatarImage from "/assets/avatar.jfif"
 import styles from "./Post.module.css"
 
-export function Post() {
+export function Post({ author, pusblishedDate, content }) {
+  const pusblishedDateFormatted = format(
+    pusblishedDate, "d 'de' LLLL 'ás' HH:mm'h'", {
+    locale: ptBr,
+  })
+
+  const pusblishedDateRelativeToNow = formatDistanceToNow(pusblishedDate, {
+    locale: ptBr,
+    addSuffix: true
+  })
   return(
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src={avatarImage} />
+          <Avatar src={author.avatarUrl} />
 
             <div className={styles.authorInfo}>
-              <strong>Gabriel Francisco</strong>
-              <span>Web Developer</span>
+              <strong>{author.name}</strong>
+              <span>{author.role}</span>
             </div>
         </div>
 
-        <time title="Publicado 11 de Maio" dateTime="2024-05-11 08:13">Publicado à 1h</time>
+        <time title={pusblishedDateFormatted} dateTime={pusblishedDate.toISOString()}>
+          {pusblishedDateRelativeToNow}
+        </time>
       </header>
 
       <div className={styles.content}>
-        <p>Faala Galera 👏</p>
-        <p>Olá, Acabei de subir um novo projecto no meu portofólio. É um projecto que fiz no NLW return, evento da rocketseat</p>
-        <p>👍<a href="#">gabriel.francisco/app</a></p>
-        <p><a href="#">#rocketseat #nlw, #novoprojecto</a></p>
+        {content.map(line => {
+          if(line.type === "paragraph") {
+            return <p>{line.content}</p>
+          } else if(line.type === "link") {
+            return <p><a href="#">{line.content}</a></p>
+          }
+        })}
       </div>
 
       <form className={styles.commentForm}>

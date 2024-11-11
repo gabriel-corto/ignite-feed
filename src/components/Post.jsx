@@ -24,6 +24,14 @@ export function Post({ author, pusblishedDate, content }) {
     setNewCommentText(event.target.value)
   }
 
+  function handleDeleteComment(commentToDelete) {
+    const commentListWithoutCommentDeleted = comments.filter(comment => {
+      return comment !== commentToDelete
+    })
+
+    setComments(commentListWithoutCommentDeleted)
+  }
+
   const pusblishedDateFormatted = format(
     pusblishedDate, "d 'de' LLLL 'ás' HH:mm'h'", {
     locale: ptBr,
@@ -82,6 +90,7 @@ export function Post({ author, pusblishedDate, content }) {
             <Comment 
               key={comment}
               content={comment} 
+              onDeleteComment={() => { handleDeleteComment(comment) }}
             />
           )
         })}

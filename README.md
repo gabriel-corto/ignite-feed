@@ -7,7 +7,9 @@ Ignite feed is a project that simulates the social media feed, with features suc
 developed during the training at https://www.rocketseat.com.br of the react fundamentals module, with the objective of establishing the pillars of react, which are componentization, properties, states and development of static typing with typescript.
 </p>
 
-## 🛠️ Used Tecnologies
+<img src="./public//assets/demo.png">
+
+## 🛠️ Tecnologies
 
 <ul>
   <li>Vite</li>

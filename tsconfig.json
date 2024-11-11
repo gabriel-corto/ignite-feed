@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "es2015"],
+    "allowJs": true,                // Permite arquivos JS no projeto
+    "checkJs": false,               // Não verifica arquivos JS
+    "jsx": "react-jsx",             // Para React 17+ (caso contrário, use "react")
+    "moduleResolution": "node",
+    "module": "esnext",
+    "strict": true,                 // Habilita o modo estrito de verificação
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

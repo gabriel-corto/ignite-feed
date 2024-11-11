@@ -2,34 +2,49 @@ import { Avatar } from "./Avatar"
 import { Comment } from "./Comment"
 
 import { format, formatDistanceToNow } from "date-fns"
-import ptBr from "date-fns/locale/pt-BR"
+import { ptBR } from "date-fns/locale"
 
 import styles from "./Post.module.css"
-import { useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 
-export function Post({ author, pusblishedDate, content }) {
+interface Author {
+  avatarUrl: string 
+  name: string 
+  role: string 
+}
+interface Content {
+  type: "paragraph" | "link"
+  content: string 
+}
+interface PostProps {
+  author: Author
+  pusblishedDate: Date
+  content: Content[]
+}
+
+export function Post({ author, pusblishedDate, content }: PostProps) {
   const [comments, setComments] = useState([
     "Faala Pessoal, projecto top! 👏👀"
   ])
   const [newCommentText, setNewCommentText] = useState("")
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: FormEvent){
     event.preventDefault()
 
     setComments([newCommentText, ...comments])
     setNewCommentText("")
   }
 
-  function handleNewCommentChange(event) {
+  function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('')
     setNewCommentText(event.target.value)
   }
 
-  function handleNewCommentInvalid(event) {
+  function handleNewCommentInvalid(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('Esse campo é obrigatório!')
   }
 
-  function handleDeleteComment(commentToDelete) {
+  function handleDeleteComment(commentToDelete: string) {
     const commentListWithoutCommentDeleted = comments.filter(comment => {
       return comment !== commentToDelete
     })
@@ -39,11 +54,11 @@ export function Post({ author, pusblishedDate, content }) {
 
   const pusblishedDateFormatted = format(
     pusblishedDate, "d 'de' LLLL 'ás' HH:mm'h'", {
-    locale: ptBr,
+    locale: ptBR,
   })
 
   const pusblishedDateRelativeToNow = formatDistanceToNow(pusblishedDate, {
-    locale: ptBr,
+    locale: ptBR,
     addSuffix: true
   })
 

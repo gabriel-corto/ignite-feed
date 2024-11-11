@@ -3,8 +3,16 @@ import { Avatar } from "./Avatar"
 
 import avatarImage from "/assets/avatar.jfif"
 import styles from "./Comment.module.css"
+import { useState } from "react"
 
 export function Comment({ content, onDeleteComment }) {
+  
+  const [likes, setCommentLikes] = useState(0)
+
+  function handleSetCommentLikes() {
+    setCommentLikes((likes) => likes + 1)
+  }
+
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src={avatarImage} />
@@ -26,9 +34,9 @@ export function Comment({ content, onDeleteComment }) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={handleSetCommentLikes}>
             <ThumbsUp />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likes}</span>
           </button>
         </footer>
       </div>

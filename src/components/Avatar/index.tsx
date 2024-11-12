@@ -1,5 +1,5 @@
 
-import styles from "./Avatar.module.css"
+import styles from "./style.module.css"
 
 interface AvatarProps {
   src: string 

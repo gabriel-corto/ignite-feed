@@ -1,10 +1,10 @@
-import { Avatar } from "./Avatar"
-import { Comment } from "./Comment"
+import { Avatar } from "../Avatar"
+import { Comment } from "../Comment"
 
 import { format, formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale"
 
-import styles from "./Post.module.css"
+import styles from "./style.module.css"
 import { ChangeEvent, FormEvent, useState } from "react"
 
 interface Author {

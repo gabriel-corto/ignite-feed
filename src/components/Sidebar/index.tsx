@@ -1,9 +1,9 @@
-import { Avatar } from "./Avatar"
+import { Avatar } from "../Avatar"
 
 import coverImage from "/assets/cover.jpg"
 import avatarImage from "/assets/avatar.jfif"
 
-import styles from "./Sidebar.module.css"
+import styles from "./style.module.css"
 import { PencilLine } from "phosphor-react"
 
 export function Sidebar() {

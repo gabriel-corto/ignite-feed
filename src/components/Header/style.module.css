@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   padding: 2rem 15.5rem;
   gap: 1rem;
@@ -14,47 +14,4 @@
 .header svg {
   width: 1.5rem;
   height: 1.5rem;
-}
-.navbar ul{
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 1rem;
-}
-.navbar ul li a{
-  text-decoration: none;
-  color: var(--gray-300);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  letter-spacing: 0.2px;
-  transition: color 0.1s;
-  padding: 0.5rem;
-}
-.navbar ul li a:hover {
-  color: var(--green-500);
-}
-.navbar ul li a:focus {
-  color: var(--green-500);
-}
-div button{
-  padding: 1rem;
-  border-radius: 8px;
-  border: 0;
-  background: var(--green-500);
-  color: var(--white);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  transition: backgorund-color 0.1s;
-}
-div button:hover {
-  background: var(--green-300);
-  cursor: pointer;
 }
